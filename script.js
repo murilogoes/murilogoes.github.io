@@ -11,6 +11,9 @@ const translations = {
     heroRole: "I build bridges between complex technology and public institutions that need it to work in the real world.",
     exploreWork: "Explore my work",
     emailMe: "Email me",
+    cvDownload: "Download CV",
+    cvPortuguese: "Portuguese (PDF)",
+    cvEnglish: "English (PDF)",
     location: "São Paulo, Brazil",
     openExchange: "Academic dialogue, teaching and knowledge exchange",
     proofYears: "start of a career in public safety",
@@ -110,6 +113,9 @@ const translations = {
     heroRole: "Construo pontes entre tecnologias complexas e instituições públicas que precisam fazê-las funcionar no mundo real.",
     exploreWork: "Conheça meu trabalho",
     emailMe: "Enviar e-mail",
+    cvDownload: "Baixar currículo",
+    cvPortuguese: "Português (PDF)",
+    cvEnglish: "Inglês (PDF)",
     location: "São Paulo, Brasil",
     openExchange: "Diálogo acadêmico, ensino e troca de conhecimentos",
     proofYears: "início da carreira na área de segurança pública",
@@ -204,6 +210,7 @@ const translatedElements = document.querySelectorAll("[data-i18n]");
 const portrait = document.querySelector(".portrait img");
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNavigation = document.querySelector(".main-nav");
+const cvDownload = document.querySelector(".cv-download");
 
 function updateMenuLabel(language) {
   if (!menuToggle) return;
@@ -267,6 +274,18 @@ if (menuToggle && mainNavigation) {
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 920) closeMenu();
+  });
+}
+
+if (cvDownload) {
+  document.addEventListener("click", (event) => {
+    if (cvDownload.open && !cvDownload.contains(event.target)) {
+      cvDownload.removeAttribute("open");
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") cvDownload.removeAttribute("open");
   });
 }
 
