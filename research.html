@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Research and publications by Murilo Góes de Almeida." />
+    <meta name="theme-color" content="#090b10" />
+    <title>Research — Murilo Góes de Almeida</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="./index.html" aria-label="Murilo Góes de Almeida, home">
+        <span class="wordmark-mark" aria-hidden="true">MG</span>
+        <span>Murilo Góes</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="./index.html#work" data-i18n="navWork">Work</a>
+        <a class="is-current" href="./research.html" data-i18n="navResearch">Research</a>
+        <a href="./resources.html" data-i18n="navResources">Resources</a>
+        <a href="./index.html#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language">
+        <button type="button" class="language-option is-active" data-language="en" aria-pressed="true">EN</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" class="language-option" data-language="pt-BR" aria-pressed="false">PT-BR</button>
+      </div>
+    </header>
+
+    <main id="main" class="subpage section-shell">
+      <header class="subpage-header reveal">
+        <a class="back-link" href="./index.html" data-i18n="backProfile">← Back to profile</a>
+        <p class="eyebrow" data-i18n="researchKicker">Research & publications</p>
+        <h1 data-i18n="researchPageTitle">Academic work and applied research.</h1>
+        <p data-i18n="researchIntro">
+          Peer-reviewed work spanning secure software architecture, microservices, digital signatures and applied machine learning.
+        </p>
+      </header>
+
+      <section class="content-list" aria-label="Publications">
+        <a class="content-row reveal" href="https://www.mdpi.com/2076-3417/12/6/3023" target="_blank" rel="noreferrer">
+          <span class="content-meta">Applied Sciences · 2022</span>
+          <div>
+            <h2>Authentication and Authorization in Microservices Architecture</h2>
+            <p data-i18n="pubMicroservices">A systematic literature review of identity and access control in distributed systems.</p>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="content-row reveal" href="https://www.mdpi.com/2078-2489/12/8/289" target="_blank" rel="noreferrer">
+          <span class="content-meta">Information · 2021</span>
+          <div>
+            <h2>A Digital Signature Model Using XAdES Standard as a REST Service</h2>
+            <p data-i18n="pubSignature">A service-oriented approach to interoperable digital signatures.</p>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="content-row reveal" href="https://link.springer.com/chapter/10.1007/978-3-031-10522-7_25" target="_blank" rel="noreferrer">
+          <span class="content-meta">Springer · ICCSA 2022</span>
+          <div>
+            <h2>The Adoption of Microservices Architecture in Police Intelligence</h2>
+            <p data-i18n="pubPolice">Lessons from modernizing legacy systems in a police intelligence environment.</p>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="content-row reveal" href="https://ciaca-conf.org/wp-content/uploads/2022/11/1_CIAWI2022_PT_F_035.pdf" target="_blank" rel="noreferrer">
+          <span class="content-meta">CIAWI · 2022</span>
+          <div>
+            <h2 data-i18n="crimePaperTitle">Machine Learning for Classifying Death Crimes in São Paulo</h2>
+            <p data-i18n="pubCrime">An applied study of automated text classification in public safety records.</p>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <nav class="reference-links reveal" aria-label="Academic profiles">
+        <a href="http://lattes.cnpq.br/4149857748718676" target="_blank" rel="noreferrer">Lattes ↗</a>
+        <a href="https://orcid.org/0000-0002-4545-9099" target="_blank" rel="noreferrer">ORCID ↗</a>
+        <a href="https://scholar.google.com/citations?user=kk-vF6cAAAAJ" target="_blank" rel="noreferrer">Google Scholar ↗</a>
+        <a href="https://repositorio.unb.br/bitstream/10482/45342/1/2022_MuriloG%C3%B3esdeAlmeida.pdf" target="_blank" rel="noreferrer" data-i18n="mastersThesis">Master’s thesis ↗</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span id="year"></span> Murilo Góes de Almeida</p>
+      <a href="./index.html" data-i18n="backProfile">← Back to profile</a>
+    </footer>
+  </body>
+</html>
