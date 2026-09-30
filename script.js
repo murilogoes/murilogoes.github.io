@@ -12,7 +12,7 @@ const translations = {
     exploreWork: "Explore my work",
     emailMe: "Email me",
     location: "São Paulo, Brazil",
-    openExchange: "Open to academic and professional exchange",
+    openExchange: "Academic dialogue, teaching and knowledge exchange",
     proofYears: "start of a career in public safety",
     proofTechnology: "start of professional work in information technology",
     proofPhd: "doctoral research in Computer Science and AI",
@@ -95,7 +95,7 @@ const translations = {
     backProfile: "← Back to profile",
     contactKicker: "Let’s connect",
     contactTitle: "Good conversations can become useful systems, research or classes.",
-    contactText: "For academic exchange, teaching, technology and public-sector collaboration, send me a message.",
+    contactText: "For academic exchange, research, teaching and knowledge sharing on technology and public safety, send me a message.",
     backTop: "Back to top ↑"
   },
   "pt-BR": {
@@ -111,7 +111,7 @@ const translations = {
     exploreWork: "Conheça meu trabalho",
     emailMe: "Enviar e-mail",
     location: "São Paulo, Brasil",
-    openExchange: "Aberto a intercâmbio acadêmico e profissional",
+    openExchange: "Diálogo acadêmico, ensino e troca de conhecimentos",
     proofYears: "início da carreira na área de segurança pública",
     proofTechnology: "início da atuação profissional em tecnologia da informação",
     proofPhd: "pesquisa de doutorado em Ciência da Computação e IA",
@@ -194,7 +194,7 @@ const translations = {
     backProfile: "← Voltar ao perfil",
     contactKicker: "Vamos conversar",
     contactTitle: "Boas conversas podem se transformar em sistemas, pesquisas ou aulas úteis.",
-    contactText: "Para intercâmbio acadêmico, ensino, tecnologia e colaboração com o setor público, envie uma mensagem.",
+    contactText: "Para intercâmbio acadêmico, pesquisa, ensino e troca de conhecimentos sobre tecnologia e segurança pública, envie uma mensagem.",
     backTop: "Voltar ao topo ↑"
   }
 };
