@@ -5,6 +5,8 @@ const translations = {
     navResearch: "Research",
     navResources: "Resources",
     navContact: "Contact",
+    menuOpen: "Open navigation",
+    menuClose: "Close navigation",
     heroEyebrow: "Technology · Artificial Intelligence · Public Safety",
     heroRole: "I build bridges between complex technology and public institutions that need it to work in the real world.",
     exploreWork: "Explore my work",
@@ -102,6 +104,8 @@ const translations = {
     navResearch: "Pesquisa",
     navResources: "Conteúdos",
     navContact: "Contato",
+    menuOpen: "Abrir navegação",
+    menuClose: "Fechar navegação",
     heroEyebrow: "Tecnologia · Inteligência Artificial · Segurança Pública",
     heroRole: "Construo pontes entre tecnologias complexas e instituições públicas que precisam fazê-las funcionar no mundo real.",
     exploreWork: "Conheça meu trabalho",
@@ -198,6 +202,23 @@ const translations = {
 const languageButtons = document.querySelectorAll("[data-language]");
 const translatedElements = document.querySelectorAll("[data-i18n]");
 const portrait = document.querySelector(".portrait img");
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNavigation = document.querySelector(".main-nav");
+
+function updateMenuLabel(language) {
+  if (!menuToggle) return;
+  const dictionary = translations[language] || translations.en;
+  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-label", isOpen ? dictionary.menuClose : dictionary.menuOpen);
+}
+
+function closeMenu() {
+  if (!menuToggle || !mainNavigation) return;
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.classList.remove("is-open");
+  mainNavigation.classList.remove("is-open");
+  updateMenuLabel(document.documentElement.lang);
+}
 
 function setLanguage(language) {
   const dictionary = translations[language] || translations.en;
@@ -218,12 +239,36 @@ function setLanguage(language) {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
+  updateMenuLabel(language);
+
   localStorage.setItem("murilo-site-language", language);
 }
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.language));
 });
+
+if (menuToggle && mainNavigation) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.classList.toggle("is-open", isOpen);
+    mainNavigation.classList.toggle("is-open", isOpen);
+    updateMenuLabel(document.documentElement.lang);
+  });
+
+  mainNavigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 920) closeMenu();
+  });
+}
 
 const preferredLanguage = localStorage.getItem("murilo-site-language");
 setLanguage(preferredLanguage === "pt-BR" ? "pt-BR" : "en");
